@@ -89,6 +89,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: FlatButton(
+              key: Key('B1'),
               textColor: Colors.white,
               color: Colors.green,
               child: Text(
@@ -108,6 +109,7 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: FlatButton(
+              key: Key('B'),
               color: Colors.red,
               child: Text(
                 'False',

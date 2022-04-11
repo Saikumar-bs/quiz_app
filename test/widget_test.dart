@@ -73,4 +73,15 @@ void main() {
     //assert
     expect(find.byWidget(childWidget), findsNWidgets(1));
   });
+
+  testWidgets('To test buttons', (WidgetTester tester) async {
+    // arrange
+    await tester.pumpWidget(app.Quizzler());
+
+    // act
+    await tester.pumpWidget(MaterialApp(key: Key('B1')));
+
+    //assert
+    expect(find.byKey(Key('B1')), findsOneWidget);
+  });
 }
