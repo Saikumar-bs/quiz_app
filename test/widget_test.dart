@@ -74,7 +74,7 @@ void main() {
     expect(find.byWidget(childWidget), findsNWidgets(1));
   });
 
-  testWidgets('To test buttons', (WidgetTester tester) async {
+  testWidgets('To test button B1 using a key', (WidgetTester tester) async {
     // arrange
     await tester.pumpWidget(app.Quizzler());
 
@@ -83,5 +83,16 @@ void main() {
 
     //assert
     expect(find.byKey(Key('B1')), findsOneWidget);
+  });
+
+  testWidgets('To test button B2 color', (WidgetTester tester) async {
+    // arrange
+    await tester.pumpWidget(app.Quizzler());
+
+    // act
+    final mybutton = tester.widget(find.byKey(Key('B2')));
+
+    //assert
+    expect((mybutton as FlatButton).color, Colors.red);
   });
 }
