@@ -41,7 +41,7 @@ void main() {
     });
   });
 
-  testWidgets('To test scaffold color', (WidgetTester tester) async {
+  testWidgets('To test scaffold', (WidgetTester tester) async {
     // arrange
     await tester.pumpWidget(app.Quizzler());
 
@@ -50,6 +50,17 @@ void main() {
 
     //assert
     expect(find.byKey(Key('S')), findsOneWidget);
+  });
+
+  testWidgets('To test scaffold', (WidgetTester tester) async {
+    // arrange
+    await tester.pumpWidget(app.Quizzler());
+
+    // act
+    final myScaffold = tester.widget(find.byKey(Key('S')));
+
+    //assert
+    expect((myScaffold as Scaffold).backgroundColor, Colors.grey.shade900);
   });
 
   testWidgets('finds padding of question', (WidgetTester tester) async {
