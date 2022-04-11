@@ -51,4 +51,15 @@ void main() {
     //assert
     expect(find.byKey(Key('S')), findsOneWidget);
   });
+
+  testWidgets('finds padding of question', (WidgetTester tester) async {
+    // arrange
+    const childWidget = Padding(padding: EdgeInsets.all(10.0));
+
+    // act
+    await tester.pumpWidget(Container(child: childWidget));
+
+    //assert
+    expect(find.byWidget(childWidget), findsNWidgets(1));
+  });
 }
