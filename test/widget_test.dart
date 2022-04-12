@@ -95,4 +95,8 @@ void main() {
     //assert
     expect((mybutton as FlatButton).color, Colors.red);
   });
+
+  tearDownAll(() {
+    print('Congrats, All tests passed!');
+  });
 }
